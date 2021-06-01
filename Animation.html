@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анимация</title>
+<style>
+    #man{
+        position: absolute;
+        left: 76%;
+		margin-top: 22px;
+    }
+    #hc{
+        position: absolute;
+		margin-top: 65px;
+    }
+    #mozg1{
+        position: absolute;
+        left: 40%;
+		top: 78%;
+    }
+    #mozg2{
+        position: absolute;
+        left: 40%;
+		top: 78%;
+        visibility: hidden;
+    }
+</style>    
+</head>
+<body> 
+    <div>
+        <img src="images/addons-pc.png" alt="pc" id="pc" style="position: absolute">
+    </div>
+    <div>
+        <img src="images/h+c.png" alt="hc" id="hc" style="position: absolute">
+    </div> 
+    <div>
+        <img src="images/контур-головы-и-мозга-персоны-125661120.jpg" alt="man" id="man" style="position: absolute">
+    </div>    
+    <div>
+        <img src="images/images (1).jpg" alt="mozg1" id="mozg1">
+    </div>
+    <div>
+        <img src="images/images.jpg" alt="mozg2" id="mozg2">
+    </div>
+    
+    <script>
+        let hcImg=document.getElementById("hc");
+        let mozg1Img=document.getElementById("mozg1");
+        let mozg2Img=document.getElementById("mozg2");
+        let step=110;
+        let flag=true;
+        function animation(){ 
+            if(window.innerWidth-260>step&&flag){
+                hcImg.style.transform="scaleX(1)";
+                step+=1; 
+            }else{
+                hcImg.style.visibility="hidden"
+                mozg1Img.style.visibility="hidden"
+                mozg2Img.style.visibility="visible"
+            }
+            hcImg.style.left=step+"px";
+        }
+        setInterval(animation,6);
+    </script>
+</body>
+</html>
